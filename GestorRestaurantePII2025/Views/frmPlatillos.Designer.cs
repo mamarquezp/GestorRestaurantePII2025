@@ -86,6 +86,7 @@
             Name = "frmPlatillos";
             Text = "Mantenimiento de Patillos";
             ((System.ComponentModel.ISupportInitialize)dgvPlatillos).EndInit();
+            this.Load += new System.EventHandler(this.frmPlatillos_Load);
             ResumeLayout(false);
         }
 

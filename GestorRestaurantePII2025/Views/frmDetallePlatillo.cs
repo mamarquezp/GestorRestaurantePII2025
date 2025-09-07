@@ -22,7 +22,7 @@ namespace GestorRestaurantePII2025.Views
             InitializeComponent();
             this.platilloAEditar = platillo;
         }
-        private void FormDetallePlatillo_Load(object sender, EventArgs e)
+        private void frmDetallePlatillo_Load(object sender, EventArgs e)
         {
             cmbBoxCategoriaPlatillo.DataSource = DBTemporal.Categorias;
             cmbBoxCategoriaPlatillo.DisplayMember = "Nombre";

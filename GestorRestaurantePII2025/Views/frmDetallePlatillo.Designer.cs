@@ -127,7 +127,7 @@
             Controls.Add(lblNombrePlatillo);
             Name = "frmDetallePlatillo";
             Text = "Detalle del Platillo";
-            Load += FormDetallePlatillo_Load;
+            Load += frmDetallePlatillo_Load;
             ((System.ComponentModel.ISupportInitialize)nupPrecioPlatillo).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -21,14 +21,13 @@ namespace GestorRestaurantePII2025.Views
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
-            DBTemporal.CargarDatosIniciales();
             ActualizarGrid();
         }
 
         private void ActualizarGrid()
         {
             dgvCategorias.DataSource = null;
-            dgvCategorias.DataSource = DBTemporal.Categorias;
+            dgvCategorias.DataSource = new BindingList<Categoria>(DBTemporal.Categorias);
             dgvCategorias.Columns["Id"].Visible = false; //para no mostrar el ID
         }
         private void btnAgregar_Click(object sender, EventArgs e)

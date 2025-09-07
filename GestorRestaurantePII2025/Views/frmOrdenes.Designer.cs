@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             pnlDatosOrden = new Panel();
+            nudCantidadPlatos = new NumericUpDown();
+            lblCantidadOrden = new Label();
             btnAgregarAPedido = new Button();
             lstBoxPlatillosOrden = new ListBox();
             lblPlatilloOrden = new Label();
@@ -40,11 +42,9 @@
             btnQuitarDelPedido = new Button();
             lblTotalTitulo = new Label();
             lblTotalMonto = new Label();
-            lblCantidadOrden = new Label();
-            nudCantidadPlatos = new NumericUpDown();
             pnlDatosOrden.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPedidoActual).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidadPlatos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidoActual).BeginInit();
             SuspendLayout();
             // 
             // pnlDatosOrden
@@ -61,6 +61,22 @@
             pnlDatosOrden.Name = "pnlDatosOrden";
             pnlDatosOrden.Size = new Size(292, 484);
             pnlDatosOrden.TabIndex = 0;
+            // 
+            // nudCantidadPlatos
+            // 
+            nudCantidadPlatos.Location = new Point(136, 385);
+            nudCantidadPlatos.Name = "nudCantidadPlatos";
+            nudCantidadPlatos.Size = new Size(150, 27);
+            nudCantidadPlatos.TabIndex = 6;
+            // 
+            // lblCantidadOrden
+            // 
+            lblCantidadOrden.AutoSize = true;
+            lblCantidadOrden.Location = new Point(0, 387);
+            lblCantidadOrden.Name = "lblCantidadOrden";
+            lblCantidadOrden.Size = new Size(130, 20);
+            lblCantidadOrden.TabIndex = 5;
+            lblCantidadOrden.Text = "Cantidad a añadir:";
             // 
             // btnAgregarAPedido
             // 
@@ -97,6 +113,7 @@
             cmbBoxCategoriaOrden.Name = "cmbBoxCategoriaOrden";
             cmbBoxCategoriaOrden.Size = new Size(233, 28);
             cmbBoxCategoriaOrden.TabIndex = 1;
+            cmbBoxCategoriaOrden.SelectedIndexChanged += cmbBoxCategoriaOrden_SelectedIndexChanged;
             // 
             // lblCategoriaOrden
             // 
@@ -111,7 +128,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(428, 9);
+            label1.Location = new Point(469, 9);
             label1.Name = "label1";
             label1.Size = new Size(285, 54);
             label1.TabIndex = 1;
@@ -123,7 +140,7 @@
             dgvPedidoActual.Location = new Point(310, 66);
             dgvPedidoActual.Name = "dgvPedidoActual";
             dgvPedidoActual.RowHeadersWidth = 51;
-            dgvPedidoActual.Size = new Size(478, 385);
+            dgvPedidoActual.Size = new Size(610, 385);
             dgvPedidoActual.TabIndex = 2;
             // 
             // btnModificarCantidad
@@ -150,7 +167,7 @@
             // 
             lblTotalTitulo.AutoSize = true;
             lblTotalTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTotalTitulo.Location = new Point(624, 459);
+            lblTotalTitulo.Location = new Point(779, 459);
             lblTotalTitulo.Name = "lblTotalTitulo";
             lblTotalTitulo.Size = new Size(89, 37);
             lblTotalTitulo.TabIndex = 5;
@@ -160,33 +177,17 @@
             // 
             lblTotalMonto.AutoSize = true;
             lblTotalMonto.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTotalMonto.Location = new Point(699, 515);
+            lblTotalMonto.Location = new Point(830, 496);
             lblTotalMonto.Name = "lblTotalMonto";
             lblTotalMonto.Size = new Size(88, 32);
             lblTotalMonto.TabIndex = 6;
             lblTotalMonto.Text = "Q 0.00";
             // 
-            // lblCantidadOrden
-            // 
-            lblCantidadOrden.AutoSize = true;
-            lblCantidadOrden.Location = new Point(0, 387);
-            lblCantidadOrden.Name = "lblCantidadOrden";
-            lblCantidadOrden.Size = new Size(130, 20);
-            lblCantidadOrden.TabIndex = 5;
-            lblCantidadOrden.Text = "Cantidad a añadir:";
-            // 
-            // nudCantidadPlatos
-            // 
-            nudCantidadPlatos.Location = new Point(136, 385);
-            nudCantidadPlatos.Name = "nudCantidadPlatos";
-            nudCantidadPlatos.Size = new Size(150, 27);
-            nudCantidadPlatos.TabIndex = 6;
-            // 
             // frmOrdenes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 561);
+            ClientSize = new Size(932, 561);
             Controls.Add(lblTotalMonto);
             Controls.Add(lblTotalTitulo);
             Controls.Add(btnQuitarDelPedido);
@@ -196,10 +197,11 @@
             Controls.Add(pnlDatosOrden);
             Name = "frmOrdenes";
             Text = "Gestion de Órdenes";
+            Load += frmOrdenes_Load;
             pnlDatosOrden.ResumeLayout(false);
             pnlDatosOrden.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPedidoActual).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidadPlatos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidoActual).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -87,6 +87,7 @@
             Name = "frmCategorias";
             Text = "Mantenimiento de Categorias";
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
+            this.Load += new System.EventHandler(this.frmCategorias_Load);
             ResumeLayout(false);
         }
 

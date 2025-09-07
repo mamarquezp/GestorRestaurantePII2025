@@ -1,4 +1,5 @@
 ﻿using GestorRestaurantePII2025.Models;
+using GestorRestaurantePII2025.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace GestorRestaurantePII2025.Views
             dgvPedidoActual.DataSource = pedidoActual;
             ConfigurarGridPedido();
 
-            cmbBoxCategoriaOrden.DataSource = Data.DBTemporal.Categorias;
+            cmbBoxCategoriaOrden.DataSource = DBTemporal.Categorias;
             if (cmbBoxCategoriaOrden.Items.Count > 0)
             {
                 cmbBoxCategoriaOrden.SelectedIndex = 0;

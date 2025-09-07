@@ -1,4 +1,5 @@
 ﻿using GestorRestaurantePII2025.Models;
+using GestorRestaurantePII2025.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace GestorRestaurantePII2025.Views
             InitializeComponent();
         }
 
-        private void FormPlatillos_Load(object sender, EventArgs e)
+        private void frmPlatillos_Load(object sender, EventArgs e)
         {
             ActualizarGrid();
             ConfigurarColumnas();
@@ -27,7 +28,7 @@ namespace GestorRestaurantePII2025.Views
         private void ActualizarGrid()
         {
             dgvPlatillos.DataSource = null;
-            dgvPlatillos.DataSource = new BindingList<Platillo>(Data.DBTemporal.Platillos);
+            dgvPlatillos.DataSource = new BindingList<Platillo>(DBTemporal.Platillos);
         }
 
         private void ConfigurarColumnas()
